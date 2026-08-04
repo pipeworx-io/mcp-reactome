@@ -1,18 +1,20 @@
-# mcp-reactome
+# @pipeworx/reactome
 
-Reactome MCP — open biological pathway knowledge-base.
+[Reactome](https://reactome.org) MCP — open peer-reviewed biological pathway database. Keyless.
 
-Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 673+ live data sources.
+Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 1394+ live data sources.
 
 ## Tools
 
-| Tool | Description |
-|------|-------------|
-| `search` | Search across all Reactome objects. |
-| `pathway` | Full pathway record by stable id (e.g. R-HSA-68886). |
-| `participants` | Entity participants of a pathway. |
-| `pathways_for_entity` | Pathways containing an entity, looked up by external resource id (e.g. UniProt accession). |
-| `orthologous_events` | Orthologous pathways/reactions in another species. |
+- `search(query, types?)` — cross-DB search (pathway, reaction, protein, …)
+- `pathway(id)` — full pathway record
+- `participants(id)` — entity participants of a pathway
+- `pathways_for_entity(entity_id)` — pathways containing the given entity
+- `orthologous_events(id, species)` — orthologous pathways/reactions in another species
+
+## Data source
+
+`https://reactome.org/ContentService/`
 
 ## Quick Start
 
@@ -28,7 +30,7 @@ Add to your MCP client (Claude Desktop, Cursor, Windsurf, etc.):
 }
 ```
 
-Or connect to the full Pipeworx gateway for access to all 673+ data sources:
+Or connect to the full Pipeworx gateway for access to all 1394+ data sources:
 
 ```json
 {
@@ -52,7 +54,7 @@ The gateway picks the right tool and fills the arguments automatically.
 
 ## More
 
-- [All tools and guides](https://github.com/pipeworx-io/examples)
+- [Docs and guides](https://pipeworx.io/docs)
 - [pipeworx.io](https://pipeworx.io)
 
 ## License
