@@ -1,12 +1,20 @@
 {
   "name": "@pipeworx/mcp-reactome",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Reactome MCP — open biological pathway knowledge-base.",
   "type": "module",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools.json": "./tools.json",
+    "./package.json": "./package.json"
+  },
   "bin": {
     "mcp-reactome": "bin/cli.js"
+  },
+  "files": ["bin/", "lib/", "tools.json", "server.json"],
+  "engines": {
+    "node": ">=18"
   },
   "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "reactome"],
   "license": "MIT",
@@ -14,19 +22,12 @@
     "type": "git",
     "url": "git+https://github.com/pipeworx-io/mcp-reactome.git"
   },
-  "scripts": {
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.30.0",
-    "tsx": "^4.19.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.9.3",
-    "@cloudflare/workers-types": "^4.20260405.1"
-  },
+  "mcpName": "io.github.pipeworx-io/reactome",
   "pipeworx": {
-    "sourceHash": "v1-7d3564dd8618505fde6609d00e2daa0e78c756cd487f0cc7996766c4334882d7",
-    "sourceCommit": "6fe8fb3e01138dfc4ebe7d5c246503aab9278d06"
+    "mode": "gateway",
+    "slug": "reactome",
+    "gatewaySlug": "reactome",
+    "sourceHash": "v1-672ca4bd240ac9f11ba63f3a3f1b7942d3efa8d2fa10465a73e828247d43b614",
+    "sourceCommit": "6bae4cfa7b6a73bbe014dc8820a19c80c842b21e"
   }
 }
